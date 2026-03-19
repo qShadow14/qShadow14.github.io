@@ -3350,6 +3350,17 @@ function placeOrder(){
   const finish=()=>{
     showOrderSuccess(orderId,name,email,total,orderItemsPlain,payMethod,orderDate);
     cart=[];updateCartUI();saveState();
+    // ★ Send to Vexor Dashboard
+    trackOrder({
+      product:  orderItemsPlain,
+      name:     name,
+      email:    email,
+      discord:  discord || "",
+      amount:   parseFloat((total||"0").replace("$","")),
+      category: orderType,
+      payment:  payMethod,
+      note:     notes,
+    }).catch(()=>{});
   };
   Promise.allSettled([
     emailjs.send('service_reazyvv','template_n06prwm',ownerParams),
@@ -3673,6 +3684,15 @@ function getFreeItem(btn){
 }
 
 
+
+// ══ VEXOR DASHBOARD TRACKING ══
+const VEXOR_API = "https://noble-unmasculine-noncritically.ngrok-free.dev/order";
+async function trackOrder(data) {
+  try {
+    const r = await fetch(VEXOR_API, { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data) });
+    if(r.ok) console.log("[Vexor] Order tracked:", (await r.json()).id);
+  } catch(e) { console.warn("[Vexor] Dashboard offline:", e.message); }
+}
 </script>
 </body>
 </html>
