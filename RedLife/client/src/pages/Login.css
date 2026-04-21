@@ -1,0 +1,196 @@
+.login-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #00d4ff, #0099cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.oauth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.oauth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.oauth-btn.steam {
+  background: #1b2838;
+  color: white;
+  border: 2px solid #1b2838;
+}
+
+.oauth-btn.steam:hover {
+  background: transparent;
+  border-color: #1b2838;
+}
+
+.oauth-btn.discord {
+  background: #5865F2;
+  color: white;
+  border: 2px solid #5865F2;
+}
+
+.oauth-btn.discord:hover {
+  background: transparent;
+  color: #5865F2;
+  border-color: #5865F2;
+}
+
+.oauth-btn.google {
+  background: #EA4335;
+  color: white;
+  border: 2px solid #EA4335;
+}
+
+.oauth-btn.google:hover {
+  background: transparent;
+  color: #EA4335;
+  border-color: #EA4335;
+}
+
+.oauth-btn.cfx {
+  background: #FF6B00;
+  color: white;
+  border: 2px solid #FF6B00;
+}
+
+.oauth-btn.cfx:hover {
+  background: transparent;
+  color: #FF6B00;
+  border-color: #FF6B00;
+}
+
+.oauth-btn svg {
+  font-size: 20px;
+}
+
+.login-footer {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.server-info {
+  text-align: center;
+}
+
+.server-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #00d4ff;
+}
+
+.server-info p {
+  color: #aaa;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feature {
+  background: rgba(0, 212, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.feature:hover {
+  background: rgba(0, 212, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.feature span {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.feature h4 {
+  color: #00d4ff;
+  margin-bottom: 5px;
+}
+
+.feature p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .login-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .login-card {
+    padding: 30px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 20px;
+  }
+
+  .login-header h1 {
+    font-size: 24px;
+  }
+
+  .oauth-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
