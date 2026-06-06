@@ -1,1 +1,0 @@
-# qShadow14.github.io
