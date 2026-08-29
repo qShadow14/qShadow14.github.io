@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="9x Shadow Growth pregătește următorul capitol.">
+<title>9x Shadow | În curând</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+  :root{
+    --bg: #0a0a0a;
+    --gold: #f5a623;
+    --gold2: #ffcf5c;
+    --text-muted: #cfcfcf;
+  }
+
+  *{ box-sizing: border-box; }
+
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(24px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
+  }
+
+  @keyframes scaleIn{
+    from{ opacity:0; transform: scale(0.85); }
+    to{ opacity:1; transform: scale(1); }
+  }
+
+  .anim{
+    opacity:0;
+    animation: fadeUp 0.9s cubic-bezier(.22,1,.36,1) forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .anim{ animation: none; opacity:1; }
+  }
+
+  html, body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* subtle dotted grid background */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* soft light glow top-left, matches screenshot */
+  body::after{
+    content:"";
+    position:fixed;
+    top:-10%;
+    left:-10%;
+    width:60%;
+    height:50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .page{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    min-height:100vh;
+    padding: 8vh 24px 40px;
+    text-align:center;
+  }
+
+  .logo{
+    font-weight:900;
+    line-height:0.85;
+    letter-spacing:1px;
+  }
+
+  .logo .cs{
+    display:block;
+    font-size: clamp(64px, 15vw, 130px);
+    background: linear-gradient(180deg, #ffffff 0%, #d9e3e8 40%, #b9c7cf 65%, #eef3f5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 25px rgba(255,255,255,0.15));
+  }
+
+  .logo .elite{
+    display:block;
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(56px, 13vw, 110px);
+    margin-top: -0.08em;
+    background: linear-gradient(180deg, #ffe9a8 0%, #ffc94d 35%, #f5a623 65%, #e8890a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 30px rgba(245,166,35,0.35));
+  }
+
+  .tagline{
+    max-width: 480px;
+    margin: 28px auto 0;
+    font-size: clamp(14px, 3vw, 16px);
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .tagline b{
+    color:#fff;
+    font-weight:700;
+  }
+
+  .launch-label{
+    margin-top: 34px;
+    font-weight: 800;
+    font-size: clamp(13px, 3vw, 16px);
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    text-shadow: 0 0 18px rgba(157, 78, 221, 0.4);
+  }
+
+  .countdown{
+    display:flex;
+    align-items:flex-start;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .unit .box{
+    width: 78px;
+    height: 78px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #1c1c1c 0%, #0d0d0d 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 10px 25px rgba(0,0,0,0.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 34px;
+    font-weight: 800;
+    color:#fff;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .unit .label{
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #9a9a9a;
+  }
+
+  .colon{
+    align-self:center;
+    font-size: 26px;
+    font-weight:800;
+    color: var(--accent);
+    margin-top: -14px;
+    text-shadow: 0 0 8px rgba(157, 78, 221, 0.3);
+  }
+
+  .socials{
+    display:flex;
+    align-items:center;
+    gap: 18px;
+    margin-top: 44px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(245,166,35,0.55);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .socials a{
+    width: 22px;
+    height: 22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: #eee;
+    opacity:0.9;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .socials a:hover{ opacity:1; transform: translateY(-2px); color: var(--accent); }
+  .socials svg{ width:100%; height:100%; }
+
+  .footer{
+    margin-top: 60px;
+    font-size: 11px;
+    color: #6b6b6b;
+    letter-spacing: 0.3px;
+  }
+
+  @media (max-width: 420px){
+    .countdown{ gap: 8px; }
+    .unit .box{ width: 62px; height: 62px; font-size: 26px; border-radius: 12px; }
+    .colon{ font-size: 20px; }
+    .socials{ gap: 14px; padding: 9px 18px; }
+  }
+</style>
+</head>
+<body>
+  <canvas id="space-canvas" aria-hidden="true"></canvas>
+  <div class="page">
+    <header class="site-header anim">
+      <a class="mini-brand" href="./" aria-label="9x Shadow acasă">
+        <span>9X</span><small>SHADOW</small>
+      </a>
+      <span class="header-note">GROWTH STUDIO <i aria-hidden="true"></i> 2026</span>
+    </header>
+
+    <p class="kicker anim">Un nou capitol începe aici</p>
+    <div class="logo">
+      <span class="cs anim">9x</span>
+      <span class="elite anim">Shadow</span>
+    </div>
+
+    <p class="tagline anim">
+      Reconstruim totul de la zero. Aceeași obsesie pentru rezultate, o experiență complet nouă. Urmează ceva incredibil.
+    </p>
+
+    <div class="launch-label anim">Reconstrucția este în desfășurare</div>
+    <div class="countdown" id="countdown">
+      <div class="unit anim"><div class="box" id="days"><span>00</span></div><div class="label">ZILE</div></div>
+      <div class="colon anim">:</div>
+      <div class="unit anim"><div class="box" id="hours"><span>00</span></div><div class="label">ORE</div></div>
+      <div class="colon anim">:</div>
+      <div class="unit anim"><div class="box" id="minutes"><span>00</span></div><div class="label">MINUTE</div></div>
+      <div class="colon anim">:</div>
+      <div class="unit anim"><div class="box" id="seconds"><span>00</span></div><div class="label">SECUNDE</div></div>
+    </div>
+
+    <div class="build-status anim" aria-label="Status proiect">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-label">STATUS</span>
+      <strong>Construim ceva memorabil</strong>
+      <span class="status-line" aria-hidden="true"></span>
+      <span class="status-percent">LIVE / 2026</span>
+    </div>
+
+    <section class="signal-grid anim" aria-label="Direcțiile noului capitol">
+      <article><span>01</span><strong>Idei mai clare</strong><small>Strategie care mișcă lucrurile</small></article>
+      <article><span>02</span><strong>Execuție mai curajoasă</strong><small>Design cu motiv și direcție</small></article>
+      <article><span>03</span><strong>Creștere măsurabilă</strong><small>Rezultate care rămân</small></article>
+    </section>
+
+    <a class="next-step anim" href="../proiecte/">
+      Descoperă proiectele noastre <span aria-hidden="true">↗</span>
+    </a>
+
+    <div class="socials anim">
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.5h2.9l.4-3.4h-3.3V8c0-1 .3-1.6 1.7-1.6h1.8V3.4C16.7 3.3 15.6 3.2 14.3 3.2c-2.6 0-4.4 1.6-4.4 4.5v2.4H7v3.4h2.9V22h3.6z"/></svg></a>
+      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-3-3.8h-3v13.3a2.6 2.6 0 1 1-1.8-2.5V9.6a5.8 5.8 0 1 0 4.8 5.7V9.1a7.3 7.3 0 0 0 4.2 1.3V7.2a4.3 4.3 0 0 1-1.2-1.4z"/></svg></a>
+      <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1 .1 1.4-.1.4-.2 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2-.1-.1-.2-.2-.5-.3z"/></svg></a>
+    </div>
+
+    <div class="footer anim">© 2026 9x Shadow Growth. Toate drepturile rezervate.</div>
+  </div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
