@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentru tine, iubirea mea ♡</title>
+<style>
+:root{--pink:#f7c9d4;--rose:#e98ba5;--deep:#78394f;--cream:#fff9f7;--ink:#593746;--muted:#956f7d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:ui-rounded,"Segoe UI",system-ui,sans-serif;background:radial-gradient(circle at 10% 10%,#ffe7ed 0,transparent 28%),radial-gradient(circle at 90% 30%,#ffe3e9 0,transparent 30%),linear-gradient(135deg,#fff8f6,#fff0f4);min-height:100vh}
+button{font:inherit;cursor:pointer}
+nav{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,5vw,64px);background:#fffaf8df;backdrop-filter:blur(14px);border-bottom:1px solid #f3d5dd}
+.brand{font-weight:800;letter-spacing:.3px;color:var(--deep)}.brand span{color:var(--rose)}
+.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{color:var(--deep);text-decoration:none;padding:8px 12px;border-radius:999px;font-size:.9rem}.navlinks a:hover{background:#ffe3eb}
+.hero{max-width:1100px;margin:36px auto 24px;padding:clamp(24px,5vw,56px) 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center}
+.eyebrow{display:inline-block;padding:7px 12px;background:#ffe2e9;border:1px solid #f6c5d2;border-radius:999px;font-size:.82rem;color:#9d526b}
+h1{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:18px 0;color:#803d56;letter-spacing:-1.5px}
+.hero p{font-size:1.08rem;line-height:1.8;max-width:620px;color:#805d6b}
+.primary,.secondary{border:0;border-radius:999px;padding:13px 21px;transition:transform .2s,box-shadow .2s}.primary{background:linear-gradient(135deg,#e986a2,#d86c8b);color:white;box-shadow:0 8px 20px #df88a344}.secondary{background:#fff;color:#8b4960;border:1px solid #f1c6d2}.primary:hover,.secondary:hover{transform:translateY(-2px);box-shadow:0 10px 22px #d47a9430}
+.hero-art{min-height:270px;display:grid;place-items:center;position:relative}.heart{font-size:clamp(7rem,17vw,12rem);filter:drop-shadow(0 15px 18px #df819c55);animation:float 4s ease-in-out infinite}.spark{position:absolute;font-size:2rem;animation:float 3.5s ease-in-out infinite}.s1{top:10%;left:15%}.s2{right:10%;top:22%;animation-delay:.6s}.s3{bottom:12%;left:22%;animation-delay:1s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(4deg)}}
+.section{max-width:1100px;margin:0 auto;padding:20px 24px 52px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}.section-head h2{font-family:Georgia,serif;color:#803d56;font-size:clamp(1.8rem,4vw,2.7rem);margin:0}.section-head p{color:var(--muted);margin:7px 0 0}
+.counter{white-space:nowrap;color:#a2536d;background:#ffe7ed;padding:9px 13px;border-radius:999px;font-weight:700;font-size:.9rem}
+.stage{max-width:780px;margin:0 auto 22px;background:#fffdfc;border:1px solid #f1cbd5;border-radius:28px;padding:clamp(24px,5vw,48px);box-shadow:0 22px 55px #9e526514;position:relative;overflow:hidden;min-height:310px;display:flex;flex-direction:column;justify-content:center}
+.stage:before{content:"";position:absolute;width:190px;height:190px;background:#ffedf1;border-radius:50%;right:-80px;top:-90px}
+.slide-emoji{font-size:2.6rem;position:relative}.slide-num{color:#bc7188;text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:800;margin:14px 0 8px;position:relative}
+.stage h3{font-family:Georgia,serif;color:#803d56;font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 14px;position:relative}
+.stage .copy{font-size:1.08rem;line-height:1.9;color:#745362;max-width:650px;margin:0;position:relative}
+.controls{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:18px auto 30px}.dots{display:flex;gap:5px;justify-content:center;max-width:210px;overflow:hidden}.dot{border:0;width:7px;height:7px;border-radius:50%;padding:0;background:#e8b8c6;flex-shrink:0}.dot.active{background:#bd5e7b;width:20px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.reason{border:1px solid #f0cbd5;background:#fffaf9;border-radius:16px;padding:15px;text-align:left;color:var(--ink);min-height:145px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.reason:hover{transform:translateY(-3px);border-color:#e9a3b7;box-shadow:0 12px 22px #a6536b12}.reason.selected{outline:2px solid #d97996;background:#fff0f4}
+.reason .n{font-size:.73rem;color:#b66b82;font-weight:800;letter-spacing:1px}.reason .e{float:right;font-size:1.25rem}.reason h4{font-size:.98rem;margin:12px 0 7px;color:#87465d;line-height:1.35}.reason p{font-size:.83rem;line-height:1.55;color:#8c6a77;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.letter{max-width:900px;margin:10px auto 50px;padding:clamp(24px,5vw,48px);background:linear-gradient(135deg,#fffdfb,#fff0f4);border:1px solid #efc6d2;border-radius:26px;box-shadow:0 20px 50px #a6536b12}.letter h2{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3rem);color:#803d56;margin:0 0 18px}.letter p{line-height:1.9;color:#745362}.signoff{font-family:Georgia,serif;font-size:1.5rem;color:#a64f6b;font-style:italic}
+footer{text-align:center;padding:28px 16px;color:#a36a7d;border-top:1px solid #f1d5dd;background:#fff9f8a8}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .55fr}.hero-art{min-height:200px}}
+@media(max-width:620px){nav{align-items:flex-start;flex-direction:column}.navlinks{gap:2px}.navlinks a{padding:7px 9px;font-size:.82rem}.hero{grid-template-columns:1fr;margin-top:20px}.hero-art{min-height:130px;grid-row:1}.heart{font-size:7rem}.spark{font-size:1.4rem}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.stage{min-height:340px}.reason{min-height:150px;padding:12px}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="brand">Pentru tine <span>♡</span></div>
+  <div class="navlinks"><a href="#acasa">Acasă</a><a href="#motive">Cele 60 de motive</a><a href="#scrisoare">Mesajul meu</a></div>
+</nav>
+<header class="hero" id="acasa">
+  <div>
+    <span class="eyebrow">Un mic lucru făcut din inimă 💌</span>
+    <h1>De ce aș vrea să zâmbești din nou, iubirea mea</h1>
+    <p>60 de gânduri pentru fata mea preferată. Ieri, după pregătire, au intervenit alte lucruri și nu am mai apucat să-ți scriu. Îmi pare rău că te-ai simțit rănită. Vreau să știi cât de mult contezi pentru mine și că îmi doresc să fiu mai atent cu tine. 💗</p>
+    <button class="primary" onclick="document.querySelector('#motive').scrollIntoView({behavior:'smooth'})">Începe călătoria ♡</button>
+  </div>
+  <div class="hero-art" aria-hidden="true"><span class="spark s1">✦</span><span class="spark s2">♡</span><span class="heart">💗</span><span class="spark s3">✧</span></div>
+</header>
+
+<section class="section" id="motive">
+  <div class="section-head"><div><h2>60 de motive, pentru tine</h2><p>Alege un motiv din listă sau răsfoiește-le pe rând. 💕</p></div><div class="counter" id="counter">Motivul 1 din 60</div></div>
+  <div class="stage" aria-live="polite">
+    <div class="slide-emoji" id="emoji">❤️</div><div class="slide-num" id="num">MOTIVUL 01</div>
+    <h3 id="title">Pentru că te iubesc enorm</h3><p class="copy" id="copy"></p>
+  </div>
+  <div class="controls">
+    <button class="secondary" id="prev">← Înapoi</button>
+    <div class="dots" id="dots" aria-label="Alege un slide"></div>
+    <button class="primary" id="next">Următorul motiv →</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="section" id="scrisoare">
+  <div class="letter">
+    <span class="eyebrow">Câteva cuvinte din inimă 💗</span>
+    <h2>Mesajul meu pentru tine</h2>
+    <p>Iubita mea, îmi pare sincer rău că ieri, după ce am ajuns de la pregătire, nu am mai apucat să-ți scriu. Chiar am vrut să-ți scriu, dar au intervenit alte lucruri și până la urmă nu am mai reușit. Înțeleg că te-a durut și îmi pare rău că te-ai simțit așa. 🥺</p>
+    <p>Nu vreau să simți că ești mai puțin importantă pentru mine. Ești iubita mea și însemni enorm pentru mine. Știu că și lucrurile mici, cum este un mesaj, pot conta mult, așa că vreau să fiu mai atent și să comunic mai bine pe viitor.</p>
+    <p>Nu trebuie să treci peste supărare imediat. Vreau doar să știi că îmi pasă de tine, că îți respect sentimentele și că îmi doresc să fim bine. Sper să-ți aducă măcar un zâmbet micuț acest site, fiindcă l-am făcut special pentru tine. 💞</p>
+    <p class="signoff">Te iubesc, prințesa mea! ♡</p>
+  </div>
+</section>
+<footer>Făcut cu multă iubire, doar pentru tine ♡ · 60 de motive, o singură iubire.</footer>
+<script>
+const reasons = [
+["Pentru că te iubesc enorm","Ești o persoană extrem de importantă pentru mine și îmi doresc să te simți iubită, apreciată și în siguranță lângă mine. ❤️","❤️"],
+["Pentru că îmi pare sincer rău","Îmi pare rău că ieri nu am mai apucat să-ți scriu după pregătire. Înțeleg că te-a deranjat și vreau să-ți arăt că iau în serios ceea ce simți. 🥺","🥺"],
+["Pentru că au intervenit alte lucruri","Chiar am avut intenția să-ți scriu, dar au apărut alte lucruri și timpul a trecut. Nu a fost intenția mea să te rănesc și îmi pare rău pentru cum te-ai simțit. 💌","💌"],
+["Pentru că meriți atenția mea","Meriți să simți că iubitul tău este prezent și că se gândește la tine. Vreau să-ți ofer atenție din inimă și să fiu mai atent la lucrurile mici. 🫶","🫶"],
+["Pentru că ești fata mea specială","Pentru mine nu ești doar o persoană cu care vorbesc. Ești iubita mea, o persoană dragă pe care vreau să o văd fericită. 💗","💗"],
+["Pentru că vreau să te văd zâmbind","Zâmbetul tău îmi face ziua mai frumoasă. Îmi doresc să fiu un motiv pentru care zâmbești, nu unul dintre motivele pentru care ești tristă. 🌸","🌸"],
+["Pentru că relația noastră contează","Relația noastră merită grijă, răbdare și comunicare. Vreau să învățăm să ne înțelegem mai bine și să trecem împreună peste momentele mai grele. 💞","💞"],
+["Pentru că vreau să fim bine","Nu-mi doresc să câștig o ceartă, ci să ne înțelegem. Îmi doresc să putem vorbi frumos și să găsim o cale prin care amândoi să ne simțim bine. 🫂","🫂"],
+["Pentru că îmi pasă de ce simți","Sentimentele tale contează pentru mine. Vreau să te ascult, să înțeleg ce te-a durut și să nu minimalizez ceea ce simți. ❤️‍🩹","❤️‍🩹"],
+["Pentru că vreau să te ascult","Dacă încă ești supărată, vreau să-mi spui ce ai simțit. Nu vreau să te grăbesc; vreau să te ascult cu răbdare și sinceritate. 👂","👂"],
+["Pentru că vreau să fiu mai atent","Vreau să învăț din ce s-a întâmplat și să comunic mai bine atunci când ziua mea devine aglomerată. Îmi doresc să ai parte de mai multă liniște. 🌷","🌷"],
+["Pentru că vreau să te simți iubită","Nu vreau doar să-ți spun că te iubesc, ci să simți asta prin felul în care îți vorbesc, te ascult și îți ofer atenție. 💖","💖"],
+["Pentru că ai un loc special în inima mea","Ai un loc al tău în inima mea și nu vreau să te îndoiești de cât de mult contezi. Îmi ești foarte dragă. 💓","💓"],
+["Pentru că vreau să repar situația","Știu că un simplu «îmi pare rău» nu rezolvă totul. Vreau să-ți arăt prin fapte că am înțeles ce te-a deranjat și că pot face mai bine. 🌹","🌹"],
+["Pentru că vreau să fim o echipă","Suntem de aceeași parte. Chiar și când apare o neînțelegere, vreau să o rezolvăm împreună, cu respect și dragoste. 🤝","🤝"],
+["Pentru că îmi plac conversațiile noastre","Îmi place să aflu cum ți-a fost ziua, să-ți povestesc lucruri și să râdem împreună. Timpul petrecut vorbind cu tine contează mult pentru mine. 💬","💬"],
+["Pentru că îmi place felul tău de a fi","Felul în care vorbești, zâmbești și îți arăți personalitatea te face specială pentru mine. Mă bucur că ești în viața mea. 🦋","🦋"],
+["Pentru că vreau să-ți ofer liniște","Vreau să simți că poți vorbi cu mine despre orice și că voi încerca să te înțeleg. Îmi doresc să te simți în siguranță în relația noastră. 🕊️","🕊️"],
+["Pentru că vreau să fiu sincer cu tine","Vreau să-ți spun sincer ce s-a întâmplat: am vrut să-ți scriu, dar au intervenit alte lucruri. Îmi asum că trebuia să comunic mai bine. 💌","💌"],
+["Pentru că vreau să cresc alături de tine","O relație frumoasă înseamnă să învățăm, să ne cunoaștem mai bine și să fim mai atenți unul cu celălalt. Vreau să cresc împreună cu tine. 🌱","🌱"],
+["Pentru că îmi plac lucrurile mici dintre noi","Glumele, mesajele drăguțe și poveștile despre ziua noastră fac relația specială. Vreau să avem cât mai multe astfel de momente. 🍓","🍓"],
+["Pentru că vreau să-ți respect sentimentele","Ai dreptul să-mi spui când ceva te supără. Vreau să te ascult fără să te fac să simți că ceea ce simți nu contează. 💗","💗"],
+["Pentru că îmi doresc amintiri frumoase cu tine","Vreau să adunăm momente de care să ne amintim cu zâmbetul pe buze, să râdem mult și să ne bucurăm de timpul petrecut împreună. 🌈","🌈"],
+["Pentru că vreau să comunic mai bine","Data viitoare când apar lucruri neprevăzute, vreau să încerc să-ți trimit măcar un mesaj scurt, ca să știi ce se întâmplă. 📱","📱"],
+["Pentru că meriți sinceritate și grijă","Meriți să fii tratată cu sinceritate și să simți că cineva îți ia în serios emoțiile. Vreau să fiu mai atent la asta. 🌼","🌼"],
+["Pentru că vreau să te fac să te simți importantă","Vreau să știi că ai un loc important în viața mea și că îmi doresc să-ți arăt asta nu doar prin cuvinte, ci și prin gesturi. 🎀","🎀"],
+["Pentru că nu trebuie să fim perfecți","Toți avem zile aglomerate și facem greșeli. Important pentru mine este să putem recunoaște ce nu a mers și să încercăm să îndreptăm lucrurile. 🧸","🧸"],
+["Pentru că vreau să-ți fiu aproape","Vreau să fiu persoana cu care poți împărtăși lucrurile frumoase și cele mai dificile. Îmi doresc să simți că suntem aproape unul de celălalt. 🫂","🫂"],
+["Pentru că îmi doresc să ne înțelegem","Vreau să înțeleg cum ai văzut tu situația și să-ți explic cu calm ce s-a întâmplat din partea mea. Putem să ne ascultăm reciproc. 💞","💞"],
+["Pentru că te aleg pe tine","Te aleg pentru că țin la tine, îmi place să te am în viața mea și vreau să construim ceva frumos împreună. ❤️","❤️"],
+["Pentru că vreau să-ți ofer mai multă atenție","Vreau să-mi fac timp pentru tine și să nu las zilele aglomerate să ne afecteze comunicarea. Meriți să simți că îmi pasă. 💌","💌"],
+["Pentru că îmi place să aflu cum te simți","Nu vreau să vorbim doar despre ce facem, ci și despre cum ne simțim. Îmi pasă de lumea ta interioară și vreau să o cunosc mai bine. 🌙","🌙"],
+["Pentru că vreau să te înțeleg, nu să mă cert","Când avem o neînțelegere, vreau să caut soluții în loc să ne rănim cu vorbe. Relația noastră e mai importantă decât o ceartă. 🕊️","🕊️"],
+["Pentru că vreau să-ți demonstrez prin fapte","Știu că promisiunile contează mai puțin dacă nu sunt urmate de fapte. Vreau să-ți arăt treptat că am înțeles și că încerc să mă schimb în bine. 🌟","🌟"],
+["Pentru că ești o persoană minunată","Ai multe lucruri frumoase în tine și sper să nu uiți cât ești de specială. Mă bucur că pot să-ți spun că ești iubita mea. 🌺","🌺"],
+["Pentru că vreau să avem răbdare unul cu altul","Uneori avem nevoie de timp ca să ne liniștim și să ne înțelegem. Vreau să avem răbdare și să ne oferim spațiul de care avem nevoie. 🤍","🤍"],
+["Pentru că îmi place să te alint","Îmi place să-ți spun lucruri drăguțe și să te fac să te simți specială. Vreau să păstrăm tandrețea și bucuria dintre noi. 🐻","🐻"],
+["Pentru că vreau să fim apropiați","Îmi place apropierea dintre noi și vreau să avem grijă de ea. O conversație sinceră ne poate ajuta să ne simțim din nou aproape. 💗","💗"],
+["Pentru că vreau să-ți respect timpul","Știu că și timpul tău contează. Vreau să comunic mai clar, astfel încât să nu te las să aștepți fără să știi ce se întâmplă. ⏳","⏳"],
+["Pentru că vreau să fim fericiți","Îmi doresc o relație în care amândoi ne simțim iubiți, apreciați și ascultați. Vreau să contribui la fericirea noastră prin gesturi mici și sincere. ☀️","☀️"],
+["Pentru că îmi pasă de zilele tale","Vreau să știu ce te bucură, ce te obosește și ce te face să zâmbești. Îmi pasă de lucrurile care contează pentru tine. 🌻","🌻"],
+["Pentru că vreau să te pot liniști","Când ceva te supără, vreau să pot vorbi cu tine cu blândețe și să-ți arăt că sunt aici, gata să te ascult. 🫶","🫶"],
+["Pentru că vreau să învăț din fiecare moment","Chiar și o neînțelegere ne poate ajuta să înțelegem mai bine ce avem nevoie unul de la celălalt. Vreau să folosesc experiența asta ca să fac mai bine. 📖","📖"],
+["Pentru că meriți gesturi frumoase","Nu trebuie să fie ceva mare: un mesaj, o întrebare despre ziua ta sau un cuvânt cald pot arăta că mă gândesc la tine. Vreau să fiu atent la aceste gesturi. 🎁","🎁"],
+["Pentru că vreau să avem încredere unul în altul","Îmi doresc să putem vorbi deschis și să ne explicăm lucrurile cu sinceritate. Încrederea se construiește prin comunicare și consecvență. 🔐","🔐"],
+["Pentru că vreau să-ți aduc bucurie","Mi-ar plăcea ca acest mic site să-ți aducă un zâmbet și să-ți amintească de cât de dragă îmi ești. L-am făcut special pentru tine. 🎀","🎀"],
+["Pentru că ești iubita mea","Pentru mine, relația noastră nu este ceva banal. Îmi pasă de noi și vreau să am grijă de ceea ce construim împreună. 💘","💘"],
+["Pentru că vreau să-ți arăt apreciere","Apreciez timpul tău, grija ta și toate lucrurile pe care le aduci în viața mea. Vreau să-ți spun mai des cât de mult contezi. 🌷","🌷"],
+["Pentru că vreau să ne împăcăm cu blândețe","Sper să putem vorbi când ești pregătită și să ne apropiem din nou fără presiune. Îmi doresc să te simți ascultată și iubită. 🩷","🩷"],
+["Pentru că vreau să-ți fiu sprijin","Vreau să știi că poți veni la mine când ai nevoie să vorbești. Îmi doresc să fiu alături de tine și în zilele bune, și în cele mai grele. 🤗","🤗"],
+["Pentru că mă faci fericit","Prezența ta aduce multe lucruri frumoase în viața mea. Mă bucur de momentele noastre și vreau să creăm și mai multe. ✨","✨"],
+["Pentru că vreau să păstrăm lucrurile frumoase","Vreau să ne amintim de toate momentele în care ne-am făcut să zâmbim și să avem grijă de ceea ce ne apropie. 💐","💐"],
+["Pentru că vreau să fiu mai prezent","Vreau să fiu mai atent la comunicarea noastră și să-ți arăt că îmi fac timp pentru tine, inclusiv în zilele în care apar lucruri neprevăzute. 💬","💬"],
+["Pentru că vreau să-ți dau motive să zâmbești","Sper să ai parte de multe zâmbete, îmbrățișări și momente liniștite alături de mine. Vreau să contribui la ele în fiecare zi. 😊","😊"],
+["Pentru că iubirea se vede în lucrurile mici","Un mesaj, un «cum ești?» sau un «am ajuns bine» pot însemna mult. Vreau să fiu mai atent la micile gesturi care te fac să te simți aproape de mine. 💌","💌"],
+["Pentru că vreau să fim sinceri unul cu altul","Vreau să putem spune ce ne doare și ce ne face fericiți, fără teamă. Sinceritatea și respectul ne pot ajuta să fim mai apropiați. 🤍","🤍"],
+["Pentru că vreau să construim ceva frumos","Îmi doresc să ne susținem, să râdem împreună și să învățăm din momentele dificile. Vreau să avem grijă de relația noastră. 🏡","🏡"],
+["Pentru că meriți să te simți apreciată","Vreau să știi că eforturile și sentimentele tale nu trec neobservate. Ești importantă pentru mine și vreau să simți asta în fiecare zi. 🌹","🌹"],
+["Pentru că îmi doresc să te văd fericită lângă mine","Vreau ca relația noastră să fie un loc în care găsești căldură, înțelegere și bucurie. O să încerc să contribui la asta prin felul în care mă port cu tine. ☀️","☀️"],
+["Pentru că îmi pare rău și vreau să fac mai bine","Nu pot schimba ziua de ieri, dar pot să învăț din ea. Vreau să comunic mai bine și să fiu mai atent la ceea ce contează pentru tine. ❤️‍🩹","❤️‍🩹"],
+["Pentru că te iubesc, pur și simplu","Dincolo de toate motivele, te iubesc pentru că ești tu. Îmi ești dragă și îmi doresc să fim bine, să ne înțelegem și să continuăm să creăm amintiri frumoase. 💗","💗"]
+,
+["Pentru că ești liniștea mea","Când vorbesc cu tine, multe lucruri par mai ușoare. Îmi place să știu că te am în viața mea și vreau să simți cât de dragă îmi ești. 🌙","🌙"],
+["Pentru felul în care mă faci să râd","Ai un fel al tău de a-mi schimba starea și de a mă face să zâmbesc. Îmi doresc să avem parte de cât mai multe momente vesele împreună. 😂","😂"],
+["Pentru toate lucrurile pe care le împărtășim","Îmi place că putem povesti despre lucruri mari sau mici și că putem împărți bucăți din zilele noastre. Vreau să păstrăm apropierea asta. 💬","💬"],
+["Pentru că îmi place să te cunosc tot mai mult","Cu fiecare conversație aflu ceva nou despre tine și îmi place să descopăr ce te face fericită, ce te pasionează și ce te face să fii tu. 🦋","🦋"],
+["Pentru că meriți cuvinte blânde","Vreau să vorbesc cu tine cu grijă, mai ales atunci când avem sentimente diferite. Meriți răbdare, respect și cuvinte care să-ți aducă liniște. 🤍","🤍"],
+["Pentru că îmi place să-ți spun lucruri drăguțe","Îmi place să-ți amintesc că ești frumoasă, specială și importantă pentru mine. Sper să nu uiți niciodată cât de mult te apreciez. 🌷","🌷"],
+["Pentru că vreau să-ți fiu aproape chiar și de la distanță","Chiar și atunci când nu suntem unul lângă altul, un mesaj frumos poate să ne apropie. Vreau să am grijă de legătura noastră în fiecare zi. 📱","📱"],
+["Pentru că fiecare zi cu tine contează","Nu trebuie să se întâmple ceva extraordinar ca să mă bucur de tine. Uneori, o conversație simplă cu tine îmi face ziua mai frumoasă. ☀️","☀️"],
+["Pentru că ești una dintre bucuriile mele","Prezența ta aduce multă căldură în viața mea. Îmi doresc să simți că și tu primești de la mine iubire și bucurie. 🌞","🌞"],
+["Pentru că vreau să avem conversații frumoase","Îmi place să vorbim despre cum ne-a fost ziua, despre planuri și despre orice ne trece prin minte. Vreau să fac loc acestor momente în fiecare zi. 💌","💌"],
+["Pentru că îmi pasă de lucrurile care te supără","Chiar dacă uneori văd lucrurile diferit, vreau să înțeleg ce te-a afectat și să nu trec cu vederea sentimentele tale. 🫶","🫶"],
+["Pentru că vreau să ne oferim înțelegere","Nu trebuie să gândim mereu la fel ca să ne iubim. Putem să ne ascultăm și să încercăm să înțelegem perspectiva celuilalt. 🌸","🌸"],
+["Pentru că vreau să-ți mulțumesc că ești aici","Mă bucur că faci parte din viața mea și apreciez toate momentele în care îmi oferi timp, grijă și afecțiune. Mulțumesc că ești tu. 💐","💐"],
+["Pentru că meriți să fii ascultată până la capăt","Vreau să-ți dau spațiu să spui ce ai pe suflet fără să te întrerup sau să trag concluzii prea repede. Ce simți merită atenția mea. 👂","👂"],
+["Pentru că vreau să ne fie bine amândurora","Îmi doresc ca relația noastră să fie frumoasă pentru amândoi. Vreau să găsim soluții care ne ajută să ne simțim respectați și iubiți. 💞","💞"],
+["Pentru că îmi place să fac lucruri speciale pentru tine","Chiar și un mic gest pregătit cu drag poate să însemne mult. Am vrut ca acest site să fie un lucru făcut special pentru tine. 🎁","🎁"],
+["Pentru că vreau să-ți arăt că te apreciez","Apreciez felul în care ești, lucrurile pe care mi le povestești și timpul pe care îl împărțim. Vreau să-ți spun mai des aceste lucruri. 💖","💖"],
+["Pentru că ai un zâmbet care-mi place","Când ești fericită, îmi vine și mie să zâmbesc. Mi-ar plăcea să ai parte de cât mai multe motive sincere să fii bucuroasă. 😊","😊"],
+["Pentru că vreau să avem răbdare","Uneori avem nevoie de puțin timp ca să ne liniștim și să putem vorbi mai bine. Vreau să avem răbdare și să nu uităm că ne pasă unul de altul. 🕊️","🕊️"],
+["Pentru că vreau să învăț ce te face fericită","Vreau să cunosc lucrurile mici care îți fac ziua mai bună și să încerc să aduc mai multe astfel de momente în viața ta. 🌻","🌻"],
+["Pentru că vreau să fim deschiși unul cu altul","Îmi doresc să ne putem spune ce avem pe suflet cu sinceritate și blândețe. O comunicare bună ne poate ajuta să ne simțim mai apropiați. 🤍","🤍"],
+["Pentru că vreau să-mi fac timp pentru noi","Chiar și într-o zi plină, vreau să găsesc un moment pentru a vorbi cu tine și a-ți arăta că relația noastră contează. ⏰","⏰"],
+["Pentru că ești importantă și în zilele aglomerate","Când apar multe lucruri de făcut, vreau să-mi amintesc să comunic mai bine și să nu las programul să ne îndepărteze. 💗","💗"],
+["Pentru că vreau să te simți în siguranță cu mine","Vreau să știi că poți să-mi spui ce te doare și că voi încerca să răspund cu înțelegere, nu cu judecată. 🧸","🧸"],
+["Pentru că iubirea înseamnă și efort","Pentru mine, iubirea nu înseamnă doar vorbe frumoase. Înseamnă să încerc, să învăț și să fac lucruri care arată că îmi pasă. ❤️","❤️"],
+["Pentru că vreau să păstrăm tandrețea","Îmi plac alinturile, mesajele drăguțe și micile noastre obiceiuri. Vreau să avem grijă de lucrurile care fac relația noastră așa de specială. 💋","💋"],
+["Pentru că îmi place să-ți povestesc despre mine","Vreau să împărtășesc cu tine ce mi se întâmplă și să aflu și ce se întâmplă în lumea ta. Îmi place sentimentul că ne cunoaștem tot mai bine. 🗨️","🗨️"],
+["Pentru că vreau să te încurajez","Vreau să fiu alături de tine când ai un obiectiv, când ai emoții sau când ai nevoie să auzi că poți reuși. Sunt aici să te susțin. 🌟","🌟"],
+["Pentru că vreau să mă bucur de reușitele tale","Lucrurile care te fac fericită contează și pentru mine. Îmi doresc să pot sărbători alături de tine momentele de care ești mândră. 🎉","🎉"],
+["Pentru că vreau să-ți respect spațiul","Vreau să ne putem oferi timp atunci când avem nevoie și să revenim unul la altul cu calm și afecțiune. Respectul face iubirea mai frumoasă. 🪷","🪷"],
+["Pentru că vreau să ne înțelegem mai bine","Fiecare dintre noi are propriile sentimente și așteptări. Vreau să vorbim despre ele și să găsim împreună feluri mai bune de a comunica. 💭","💭"],
+["Pentru că vreau să te surprind frumos","Îmi place ideea de a-ți pregăti mici surprize care să te facă să zâmbești. Acest site este una dintre încercările mele de a-ți arăta afecțiunea. 🎀","🎀"],
+["Pentru că vreau să-ți spun ce simt","Uneori e mai ușor să simt ceva decât să găsesc cuvintele potrivite. Vreau să încerc să-ți exprim mai clar iubirea și aprecierea mea. ✍️","✍️"],
+["Pentru că îmi place să fim noi doi","Îmi plac momentele în care putem fi noi înșine, să glumim, să povestim și să ne simțim confortabil împreună. 🐻","🐻"],
+["Pentru că vreau să ne alegem în fiecare zi","Vreau să arăt prin felul în care mă port că aleg să am grijă de relația noastră și să contribui la ceva frumos între noi. 💘","💘"],
+["Pentru că vreau să nu rămână lucruri nespuse","Dacă ceva te apasă, vreau să putem vorbi despre acel lucru cu calm. Prefer să înțeleg ce simți decât să lăsăm neînțelegerea să crească. 💬","💬"],
+["Pentru că vreau să mă bucur de vocea ta","Îmi place să te aud povestind și să aflu ce ai pe suflet. Fiecare conversație ne poate aduce un pic mai aproape. 🎧","🎧"],
+["Pentru că vreau să-ți ofer afecțiune","Vreau să simți căldură în mesajele mele și să știi că îmi pasă de tine. Uneori, un cuvânt bun poate face o zi mai frumoasă. 💕","💕"],
+["Pentru că vreau să facem planuri împreună","Îmi place să mă gândesc la lucrurile pe care le putem face și la amintirile pe care le putem crea. Abia aștept să avem parte de momente frumoase. 🗓️","🗓️"],
+["Pentru că vreau să ne susținem reciproc","Îmi doresc să fim unul pentru altul o sursă de încurajare și înțelegere. Să ne bucurăm de reușite și să ne ajutăm când lucrurile sunt grele. 🤝","🤝"],
+["Pentru că vreau să te fac să te simți văzută","Vreau să observ lucrurile care te fac specială și să-ți arăt că sunt atent la cine ești, la ce îți place și la ce ai nevoie. 🌼","🌼"],
+["Pentru că vreau să-ți dau motive să ai încredere","Încrederea se construiește puțin câte puțin. Vreau să o întăresc prin sinceritate, consecvență și atenție la promisiunile pe care le fac. 🔐","🔐"],
+["Pentru că vreau să avem seri liniștite","Îmi doresc să încheiem zilele cu conversații frumoase, cu un mesaj cald sau cu sentimentul că suntem bine unul cu altul. 🌙","🌙"],
+["Pentru că îmi place să-ți spun «iubirea mea»","E un alint mic, dar pentru mine vine cu multă afecțiune. Îmi place că avem cuvinte și gesturi care sunt doar ale noastre. 💘","💘"],
+["Pentru că vreau să învăț să fiu atent la detalii","Lucrurile mărunte pot transmite mult. Vreau să fiu atent la ceea ce contează pentru tine și să nu presupun că știe toată lumea ce simte celălalt. 🔎","🔎"],
+["Pentru că vreau să-ți ofer timp de calitate","Când vorbim, vreau să fiu prezent și să acord atenție conversației noastre. Timpul petrecut împreună merită să fie unul frumos. ⏳","⏳"],
+["Pentru că îmi doresc să ne împăcăm când ești pregătită","Nu vreau să te grăbesc. Sper doar să putem vorbi când te simți pregătită și să găsim împreună un mod de a merge mai departe cu bine. 🌷","🌷"],
+["Pentru că vreau să fiu demn de iubirea ta","Vreau să tratez iubirea ta cu grijă și respect. Știu că asta se arată prin comportament, iar eu vreau să depun efortul necesar. ❤️","❤️"],
+["Pentru că vreau să ne păstrăm glumele","Glumele noastre și momentele în care râdem împreună sunt parte din ceea ce ne apropie. Sper să adunăm multe alte amintiri de felul acesta. 😄","😄"],
+["Pentru că vreau să mă bucur de lucrurile simple cu tine","Nu e nevoie de o ocazie specială ca să fie frumos. Uneori, să ne spunem cum ne-a fost ziua este suficient ca să ne simțim apropiați. ☕","☕"],
+["Pentru că vreau să-ți fiu alături când ai emoții","Dacă ai griji sau te simți nesigură, vreau să pot să te ascult și să-ți ofer încurajare. Nu trebuie să treci singură prin momentele dificile. 🤗","🤗"],
+["Pentru că vreau să îți respect punctul de vedere","Chiar dacă avem păreri diferite, vreau să înțeleg de unde vine perspectiva ta. Putem discuta cu respect fără să ne anulăm sentimentele. ⚖️","⚖️"],
+["Pentru că vreau să păstrăm apropierea noastră","Îmi doresc să avem grijă de legătura dintre noi prin comunicare, afecțiune și mici gesturi făcute cu drag. 💞","💞"],
+["Pentru că vreau să-ți spun mai des «mulțumesc»","Mulțumesc pentru timpul tău, pentru vorbele tale și pentru momentele pe care le împărțim. Vreau să apreciez mai des lucrurile frumoase pe care mi le oferi. 🙏","🙏"],
+["Pentru că vreau să-ți fiu un loc de liniște","Mi-ar plăcea să simți că poți veni la mine și să vorbești fără să te prefaci că totul e bine. Vreau să te ascult cu grijă. 🕯️","🕯️"],
+["Pentru că vreau să sărbătorim lucrurile mici","Fiecare zâmbet, fiecare conversație bună și fiecare moment liniștit merită apreciat. Vreau să observăm mai des frumusețea lucrurilor simple. 🎈","🎈"],
+["Pentru că vreau să-ți aduc căldură în zilele grele","Când ai o zi dificilă, sper să pot să-ți ofer cuvinte bune, răbdare și un motiv mic să zâmbești. 🌤️","🌤️"],
+["Pentru că vreau să construim amintiri doar ale noastre","Vreau să avem momente pe care să le povestim mai târziu și să ne amintim cu drag. Îmi place ideea de a construi ceva frumos împreună. 📸","📸"],
+["Pentru că vreau să fiu atent la promisiuni","Vreau să promit doar lucruri pe care le pot respecta și să încerc să fiu consecvent. Știu că încrederea se construiește prin gesturi reale. 🧡","🧡"],
+["Pentru că vreau să-ți înțeleg limbajul iubirii","Fiecare persoană simte afecțiunea în felul ei. Vreau să descopăr ce te face pe tine să te simți iubită și să țin cont de asta. 💝","💝"],
+["Pentru că vreau să nu ne pierdem blândețea","Chiar și când suntem supărați, vreau să ne amintim să vorbim cu respect. Putem rezolva lucrurile fără să uităm cât de mult ne pasă. 🌺","🌺"],
+["Pentru că vreau să-ți ofer motive reale să zâmbești","Sper ca gesturile mele să-ți arate în timp că îmi pasă. Vreau ca zâmbetul tău să vină din faptul că te simți iubită și apreciată. 😊","😊"],
+["Pentru că vreau să fiu atent la timpul nostru","Vreau să planific mai bine și să fac loc conversațiilor noastre, chiar și atunci când am multe lucruri de făcut. Tu contezi pentru mine. 🕰️","🕰️"],
+["Pentru că vreau să-ți respect emoțiile chiar când nu le înțeleg imediat","Poate că uneori am nevoie de explicații ca să înțeleg pe deplin ce simți, dar vreau să ascult și să încerc, nu să ignor ceea ce îmi spui. 💗","💗"],
+["Pentru că vreau să ne oferim iertare cu sinceritate","Sper să putem repara lucrurile atunci când greșim, fără să ne grăbim și fără să ne ascundem sentimentele. Vreau să fac partea mea cu sinceritate. 🕊️","🕊️"],
+["Pentru că vreau să-ți arăt că ești prețioasă pentru mine","Ești o persoană dragă, iar timpul și sentimentele tale au valoare. Vreau să te tratez cu grija pe care o meriți. 💎","💎"],
+["Pentru că vreau să-ți ofer un motiv să zâmbești chiar acum","Dacă acest site te face măcar puțin să zâmbești, atunci mi-am atins unul dintre scopuri. L-am pregătit cu drag, gândindu-mă la tine. 💗","💗"],
+["Pentru că îmi doresc să fim bine pe termen lung","Vreau să construim o relație bazată pe respect, comunicare și iubire. Sunt gata să învăț și să depun efort pentru lucrurile care contează pentru noi. 🌱","🌱"],
+["Pentru că tu ești tu","Nu trebuie să fii perfectă ca să fii specială pentru mine. Îmi place persoana care ești și mă bucur că te am aproape. 🌷","🌷"],
+["Pentru că vreau să-ți spun asta în mai multe feluri","Uneori spun «te iubesc», alteori încerc să arăt printr-un gest, un mesaj sau un proiect mic. Sper ca toate să-ți amintească de afecțiunea mea. 💌","💌"],
+["Pentru că iubirea mea nu se rezumă la o singură zi","Chiar dacă o zi nu a ieșit cum ne-am fi dorit, sentimentele mele pentru tine rămân importante pentru mine. Vreau să am grijă de ele și de noi. ❤️","❤️"],
+["Pentru că vreau să fim fericiți împreună","Îmi doresc să ne înțelegem, să ne susținem și să avem parte de multe momente frumoase. Vreau să contribui în fiecare zi la relația noastră. 🥰","🥰"],
+["Pentru că meriți toată sinceritatea mea","Vreau să fiu sincer cu tine despre ce se întâmplă și să comunic clar. Meriți să primești explicații și atenție, nu să rămâi cu întrebări. 💌","💌"],
+["Pentru că te iubesc din toată inima","Te iubesc pentru felul tău de a fi, pentru momentele noastre și pentru ceea ce construim împreună. Îmi doresc să fim bine și să simți cât de mult contezi. 💗","💗"],
+["Pentru că vreau să facem pace cu zâmbetul pe buze","Sper să vină momentul în care putem vorbi liniștiți, să ne înțelegem și să ne întoarcem la glumele și tandrețea noastră. Nu te grăbesc; vreau doar să fim bine. 🫶","🫶"],
+["Pentru că ai un loc aparte în povestea mea","Mă bucur că povestea mea te include și vreau să scriem împreună multe pagini frumoase, cu răbdare și iubire. 📖","📖"],
+["Pentru că vreau să-mi amintesc mereu ce contează","Vreau să țin minte că relațiile se îngrijesc prin lucruri mici: un mesaj, o întrebare, o explicație și atenție față de celălalt. 💡","💡"],
+["Pentru că sper să simți iubirea din spatele acestui site","Am pus aceste gânduri aici ca să-ți arăt că îmi pasă și că vreau să găsesc o cale frumoasă de a-ți spune asta. 🌸","🌸"],
+["Pentru că tu meriți să te simți iubită","Îmi doresc să simți iubire, respect și apreciere nu doar azi, ci și în zilele obișnuite. Vreau să fiu mai atent la felul în care îți arăt toate acestea. 💖","💖"],
+["Pentru că vreau să fac mai bine de acum înainte","Nu pot schimba ce s-a întâmplat ieri, dar pot să fiu mai atent în viitor și să comunic mai bine când intervin alte lucruri. Vreau să învăț din asta. ❤️‍🩹","❤️‍🩹"],
+["Pentru că ești iubirea mea","Ești fata mea dragă și îmi doresc să te simți apreciată, ascultată și iubită. Sper să primești aceste motive ca pe o îmbrățișare în cuvinte. 🧸","🧸"],
+["Pentru că, dintre toate motivele, tu contezi cel mai mult","Toate aceste rânduri spun același lucru: îmi pasă de tine, de sentimentele tale și de relația noastră. Te iubesc și sper să putem fi bine împreună. 💗","💗"]
+];
+let current=0;
+const $=id=>document.getElementById(id);
+function show(i){current=(i+reasons.length)%reasons.length;const r=reasons[current];$('emoji').textContent=r[2];$('num').textContent='MOTIVUL '+String(current+1).padStart(2,'0');$('title').textContent=r[0];$('copy').textContent=r[1];$('counter').textContent=`Motivul ${current+1} din ${reasons.length}`;$('prev').disabled=current===0;$('prev').style.opacity=current===0?'.5':'1';$('next').textContent=current===reasons.length-1?'Înapoi la început ↺':'Următorul motiv →';document.querySelectorAll('.reason').forEach((el,j)=>el.classList.toggle('selected',j===current));document.querySelectorAll('.dot').forEach((el,j)=>el.classList.toggle('active',j===current));}
+const grid=$('grid'),dots=$('dots');
+reasons.forEach((r,i)=>{const card=document.createElement('button');card.className='reason';card.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="e">${r[2]}</span><h4></h4><p></p>`;card.querySelector('h4').textContent=r[0];card.querySelector('p').textContent=r[1];card.addEventListener('click',()=>{show(i);document.querySelector('.stage').scrollIntoView({behavior:'smooth',block:'center'});});grid.appendChild(card);const dot=document.createElement('button');dot.className='dot';dot.title='Motivul '+(i+1);dot.setAttribute('aria-label','Deschide motivul '+(i+1));dot.addEventListener('click',()=>show(i));dots.appendChild(dot);});
+$('prev').addEventListener('click',()=>show(current-1));$('next').addEventListener('click',()=>show(current===reasons.length-1?0:current+1));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(current+1);if(e.key==='ArrowLeft')show(current-1);});
+show(0);
+</script>
+</body>
+</html>
